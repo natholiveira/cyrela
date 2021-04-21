@@ -1,8 +1,10 @@
 package com.fiap.cyrela.model
 
+import com.fiap.cyrela.request.UnityRequest
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import java.util.*
 import javax.persistence.*
 
@@ -35,4 +37,15 @@ data class Unity (
     @ManyToOne
     @JoinColumn(name="block_id", nullable=false, referencedColumnName = "id")
     val block: Block? = null
-)
+) {
+    companion object {
+        fun toModel(unityRequest: UnityRequest, block: Block, user: User) = Unity(
+                number = unityRequest.number,
+                complement = unityRequest.complement,
+                block = block,
+                user = user,
+                createdAt = OffsetDateTime.now(ZoneOffset.UTC),
+                updateAt =  OffsetDateTime.now(ZoneOffset.UTC)
+        )
+    }
+}

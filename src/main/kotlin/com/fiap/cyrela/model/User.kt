@@ -1,8 +1,10 @@
 package com.fiap.cyrela.model
 
+import com.fiap.cyrela.request.UserRequest
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import java.util.*
 import javax.persistence.*
 
@@ -32,4 +34,15 @@ data class User (
 
     @Column(name = "password")
     val password: String? = null,
-)
+) {
+    companion object {
+        fun toModel(userRequest: UserRequest) = User(
+                name = userRequest.name,
+                birthday = userRequest.birthday,
+                login = userRequest.login,
+                password = userRequest.password,
+                createdAt = OffsetDateTime.now(ZoneOffset.UTC),
+                updateAt =  OffsetDateTime.now(ZoneOffset.UTC)
+        )
+    }
+}

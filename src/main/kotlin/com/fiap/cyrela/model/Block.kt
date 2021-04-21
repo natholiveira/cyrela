@@ -1,8 +1,10 @@
 package com.fiap.cyrela.model
 
+import com.fiap.cyrela.request.BlockRequest
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import java.util.*
 import javax.persistence.*
 
@@ -27,4 +29,13 @@ data class Block (
     @ManyToOne
     @JoinColumn(name="development_id", nullable=false, referencedColumnName = "id")
     val development: Development? = null,
-)
+) {
+    companion object {
+        fun toModel(blockRequest: BlockRequest, development: Development) = Block(
+                name = blockRequest.name,
+                development = development,
+                createdAt = OffsetDateTime.now(ZoneOffset.UTC),
+                updateAt =  OffsetDateTime.now(ZoneOffset.UTC)
+        )
+    }
+}

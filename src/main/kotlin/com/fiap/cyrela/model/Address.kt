@@ -1,8 +1,10 @@
 package com.fiap.cyrela.model
 
+import com.fiap.cyrela.request.AdrressRequest
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
+import java.time.ZoneOffset
 import java.util.*
 import javax.persistence.*
 
@@ -41,4 +43,17 @@ data class Address (
 
     @Column(name = "neighborhood ")
     val neighborhood  : String? = null
-)
+) {
+    companion object {
+        fun toModel(addressRequest: AdrressRequest) = Address(
+                city = addressRequest.city,
+                street = addressRequest.street,
+                neighborhood = addressRequest.neighborhood,
+                complement = addressRequest.complement,
+                zipCode = addressRequest.zipCode,
+                number = addressRequest.number,
+                createdAt = OffsetDateTime.now(ZoneOffset.UTC),
+                updateAt =  OffsetDateTime.now(ZoneOffset.UTC)
+        )
+    }
+}
