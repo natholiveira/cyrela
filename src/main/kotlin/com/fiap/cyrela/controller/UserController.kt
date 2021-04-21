@@ -27,8 +27,7 @@ class UserController(
             ApiResponse(code = 201, message = "Created new User"),
             ApiResponse(code = 400, message = "Bad Request"),
     ))
-    fun createUser(@RequestBody @Valid userRequest: UserRequest
-                         ,bindingResult: BindingResult) =
+    fun createUser(@RequestBody @Valid userRequest: UserRequest, bindingResult: BindingResult) =
             if (bindingResult.hasErrors()) {
                 throw BadRequestExceptioin()
             } else userService.createUser(userRequest)

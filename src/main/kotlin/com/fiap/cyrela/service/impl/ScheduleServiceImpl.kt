@@ -8,7 +8,6 @@ import com.fiap.cyrela.repository.UnityRepository
 import com.fiap.cyrela.service.ScheduleService
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class ScheduleServiceImpl(

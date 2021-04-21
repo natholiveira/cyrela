@@ -26,8 +26,7 @@ class DevelopmentController(
             ApiResponse(code = 201, message = "Created new Development"),
             ApiResponse(code = 400, message = "Bad Request"),
     ))
-    fun createDevelopment(@RequestBody @Valid developmentRequest: DevelopmentRequest
-                   ,bindingResult: BindingResult) =
+    fun createDevelopment(@RequestBody @Valid developmentRequest: DevelopmentRequest, bindingResult: BindingResult) =
             if (bindingResult.hasErrors()) {
                 throw BadRequestExceptioin()
             } else developmentService.createDevelopment(developmentRequest)

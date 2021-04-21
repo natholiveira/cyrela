@@ -5,7 +5,7 @@ import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
-import java.util.*
+import java.util.Date
 import javax.persistence.*
 
 @Entity

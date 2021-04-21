@@ -1,13 +1,10 @@
 package com.fiap.cyrela.model
 
 import com.fiap.cyrela.request.DevelopmentRequest
-import org.hibernate.annotations.OnDelete
-import org.hibernate.annotations.OnDeleteAction
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.time.OffsetDateTime
 import java.time.ZoneOffset
-import java.util.*
 import javax.persistence.*
 
 @Entity

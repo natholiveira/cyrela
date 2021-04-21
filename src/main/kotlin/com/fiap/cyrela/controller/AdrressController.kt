@@ -26,8 +26,7 @@ class AdrressController(
             ApiResponse(code = 201, message = "Created new Address"),
             ApiResponse(code = 400, message = "Bad Request"),
     ))
-    fun createAddress(@RequestBody @Valid addressRequest: AdrressRequest
-                   ,bindingResult: BindingResult) =
+    fun createAddress(@RequestBody @Valid addressRequest: AdrressRequest, bindingResult: BindingResult) =
             if (bindingResult.hasErrors()) {
                 throw BadRequestExceptioin()
             } else addressService.createAddress(addressRequest)

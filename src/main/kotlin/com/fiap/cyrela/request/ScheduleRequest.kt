@@ -1,11 +1,10 @@
 package com.fiap.cyrela.request
 
-import java.util.*
+import java.util.Date
 import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 
 data class ScheduleRequest (
-
         @field:NotNull
         @field:NotBlank
         val typeActivity: String,

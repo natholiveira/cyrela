@@ -2,18 +2,14 @@ package com.fiap.cyrela.controller
 
 import com.fiap.cyrela.exception.BadRequestExceptioin
 import com.fiap.cyrela.exception.NotFoundExeption
-import com.fiap.cyrela.extension.toDate
 import com.fiap.cyrela.request.ScheduleRequest
-import com.fiap.cyrela.model.Schedule
 import com.fiap.cyrela.service.ScheduleService
 import io.swagger.annotations.ApiOperation
 import io.swagger.annotations.ApiResponse
 import io.swagger.annotations.ApiResponses
 import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
 import org.springframework.validation.BindingResult
 import org.springframework.web.bind.annotation.*
-import java.util.*
 import javax.validation.Valid
 
 @RestController
