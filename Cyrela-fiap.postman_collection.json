@@ -10,21 +10,9 @@
 			"item": [
 				{
 					"name": "Buscar uma ocorrência pelo Ticket Number",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence/ticket-number/123456",
 							"protocol": "https",
@@ -46,21 +34,9 @@
 				},
 				{
 					"name": "Buscar uma ocorrência pelo Id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence/id/1",
 							"protocol": "https",
@@ -255,21 +231,9 @@
 				},
 				{
 					"name": "Buscar uma atividade na agenda pelo ID",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "https://cyrela-fiap.herokuapp.com/api/schedule/1",
 							"protocol": "https",
