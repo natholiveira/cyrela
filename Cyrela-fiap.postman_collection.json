@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "46eef5fe-05fd-46ad-b7f4-d863d604c763",
+		"name": "Cyrela-fiap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Occurrence",
+			"item": [
+				{
+					"name": "Buscar uma ocorrência pelo Ticket Number",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence/ticket-number/123456",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"occurrence",
+								"ticket-number",
+								"123456"
+							]
+						},
+						"description": "Buscar uma ocorrência pelo TicketNumber"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar uma ocorrência pelo Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence/id/1",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"occurrence",
+								"id",
+								"1"
+							]
+						},
+						"description": "Buscar uma ocorrência na base pelo id"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar nova ocorrência",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"occurrence"
+							]
+						},
+						"description": "Criar uma nova ocorrência na base"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar ocorrências",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"occurrence"
+							]
+						},
+						"description": "Lista todas as ocorrências salvas na base"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar ocorrências filtrando por unidade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/occurrence?unityId=1",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"occurrence"
+							],
+							"query": [
+								{
+									"key": "unityId",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Lista todas as ocorrências filtrando pelo id da unidade"
+					},
+					"response": []
+				}
+			],
+			"description": "Todos os contratos da API de Ocorrência",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Schedule",
+			"item": [
+				{
+					"name": "Listar atividades da agenda filtrando pela unidade e pelo tipo de atividade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/schedule?unityId=1&typeAcitivity=atividade",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "unityId",
+									"value": "1"
+								},
+								{
+									"key": "typeAcitivity",
+									"value": "atividade"
+								}
+							]
+						},
+						"description": "Get para obter uma lista de todas as atividades da agenda filtrada pela unidade e pelo tipo da atividade"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar todas as atividades da agenda",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/schedule",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"schedule"
+							]
+						},
+						"description": "Lista todas as atividades da agenda cadastradas na base"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar uma nova atividade na agenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeActivity\": \"atividade2\",\r\n  \"unityId\": 2,\r\n  \"subject\": \"subject\",\r\n  \"actualStart\": \"2021-04-21T02:42:36.242Z\",\r\n  \"actualEnd\": \"2021-04-21T02:42:36.242Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/schedule",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"schedule"
+							]
+						},
+						"description": "Criar uma nova atividade na agenda na base de dados"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar uma atividade na agenda pelo ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"ticketNumber\": \"7535\",\r\n  \"unityId\": 2,\r\n  \"description\": \"teste na unidade\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://cyrela-fiap.herokuapp.com/api/schedule/1",
+							"protocol": "https",
+							"host": [
+								"cyrela-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"schedule",
+								"1"
+							]
+						},
+						"description": "Buscar uma atividade na agenda pelo Id"
+					},
+					"response": []
+				}
+			],
+			"description": "Todos os contrados da API para Atividades na Agenda",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Criar um novo endereço",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"state\": \"MG\",\r\n  \"number\": \"234\",\r\n  \"city\": \"Contagem\",\r\n  \"complement\": \"nenhum\",\r\n  \"zipCode\": \"12334532\",\r\n  \"street\": \"rua dos anjos\",\r\n  \"neighborhood\": \"teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cyrela-fiap.herokuapp.com/api/address",
+					"protocol": "https",
+					"host": [
+						"cyrela-fiap",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"address"
+					]
+				},
+				"description": "Cria um novo endereço na base de dados"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar um novo condomínio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"condominio novo\",\r\n  \"addressId\": 3,\r\n  \"block\": {\r\n    \"name\": \"a\",\r\n    \"unity\": {\r\n      \"number\": \"23\",\r\n      \"complement\": \"porta azul\",\r\n      \"userId\": 3\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cyrela-fiap.herokuapp.com/api/development",
+					"protocol": "https",
+					"host": [
+						"cyrela-fiap",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"development"
+					]
+				},
+				"description": "Cria um novo condomínio, passando as informações dos blocos e unidades do condomínio"
+			},
+			"response": []
+		},
+		{
+			"name": "Criar m novo usuário",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"rosania\",\r\n  \"birthday\": \"2021-04-22T23:06:48.019Z\",\r\n  \"login\": \"rosa\",\r\n  \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cyrela-fiap.herokuapp.com/api/user",
+					"protocol": "https",
+					"host": [
+						"cyrela-fiap",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "Criar um novo usuário"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
